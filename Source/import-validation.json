@@ -1,0 +1,36 @@
+[
+  {
+    "test": "complete original folder import; exact patched hashes; original source unchanged",
+    "passed": true
+  },
+  {
+    "test": "nested ZIP with spaces and already-patched executable",
+    "passed": true,
+    "exit": 0,
+    "output": "Game imported and verified."
+  },
+  {
+    "test": "unsupported executable rejected; previous installed game retained",
+    "passed": true,
+    "exit": 1,
+    "output": "KSHG.exe is an unsupported version. This launcher supports the June 2022 standalone Windows build. Your original files have not been changed."
+  },
+  {
+    "test": "missing asset rejected",
+    "passed": true,
+    "exit": 1,
+    "output": "The game folder is missing Data/CircleShadow.dds. Choose the complete game folder, including its Data and Shader folders."
+  },
+  {
+    "test": "symbolic links rejected",
+    "passed": true,
+    "exit": 1,
+    "output": "The game files contain a symbolic link. Choose an extracted, complete Windows game folder."
+  },
+  {
+    "test": "invalid ZIP rejected",
+    "passed": true,
+    "exit": 1,
+    "output": "The ZIP archive could not be extracted. Extract it first, then choose its game folder."
+  }
+]

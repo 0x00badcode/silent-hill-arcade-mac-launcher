@@ -1,0 +1,17 @@
+pid=236 gate=7BF45000 bytes=ff1d0650f47b001ef47b2b00
+second=1 adapters=5
+second=2 adapters=15
+second=3 adapters=25
+second=4 adapters=35
+second=5 adapters=44
+second=6 adapters=52
+second=7 adapters=62
+second=8 adapters=72
+second=9 adapters=83
+second=10 adapters=92
+second=11 adapters=101
+second=12 adapters=111
+second=13 adapters=121
+second=14 adapters=131
+second=15 adapters=140
+PASS adapters=141

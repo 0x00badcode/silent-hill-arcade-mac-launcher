@@ -1,0 +1,21 @@
+{
+  "version": "0.6.1",
+  "signing": "ad hoc with hardened runtime; not notarized",
+  "native_files_signed_and_verified": 588,
+  "bundles_signed_and_verified": 3,
+  "absolute_dependencies_outside_apple_system_paths": 0,
+  "read_only_dmg_launched": true,
+  "native_import_picker_verified": true,
+  "native_import_cancel_verified": true,
+  "original_folder_import_via_picker_completed": true,
+  "final_manifest_nested_zip_import_passed": true,
+  "game_process_observed": [
+    "75191       02:35 C:\\windows\\system32\\start.exe /d C:\\Arcade /wait C:\\Arcade\\KSHG.exe",
+    "75195       02:35 C:\\Arcade\\KSHG.exe"
+  ],
+  "game_executable_sha256": "71508ed6ded6815b1e6f744d74bccdc0be6eabccc17b33606277c6bb0dadd954",
+  "profile_cpu_bridge_sha256": "b6d99d573fd94f714545542d39ff0bc9124c186bfd8fc552d819326eb8e93214",
+  "rosetta_fault_in_packaged_run": false,
+  "rendering_limit": "Computer-use could verify the native picker but could not bind the separate Wine game window. This package check verified game startup, process liveness, runtime loading and logs. Earlier game verification covered user-controlled play and cinematics for over 19 minutes.",
+  "developer_id_notarization": "Pending publisher certificate and credentials; public signing branch is untested."
+}

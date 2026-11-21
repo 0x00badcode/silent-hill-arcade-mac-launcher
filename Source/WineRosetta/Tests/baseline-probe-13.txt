@@ -1,0 +1,2 @@
+pid=236 gate=7BF45000 bytes=ff2d0650f47b0c11f47b2b00
+second=3 adapters=0 contexts=70

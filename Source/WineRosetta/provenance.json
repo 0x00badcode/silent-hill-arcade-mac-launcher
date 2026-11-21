@@ -1,0 +1,14 @@
+{
+  "wine_release": "11.21 Staging, Gcenx 2026-10-31",
+  "original_sha256": "261da16d45a5196eb64a1173387120f8b0422ac4e9c74b3a4edb234385cb5fa5",
+  "patched_sha256": "b6d99d573fd94f714545542d39ff0bc9124c186bfd8fc552d819326eb8e93214",
+  "wine_source": "https://github.com/wine-mirror/wine/blob/wine-11.21/dlls/wow64cpu/cpu.c",
+  "reference_source": "https://github.com/dttdrv/wiage/blob/3f52c197d9fc9569a09d224b861e3010b397cb03/dlls/wow64cpu/cpu.c",
+  "reference_workaround": "CodeWeavers 20760, 32-to-64 far calls and 64-to-32 far returns under Rosetta",
+  "rebuild": [
+    "python3",
+    "patch_wow64cpu.py",
+    "wow64cpu-original.dll",
+    "wow64cpu.dll"
+  ]
+}

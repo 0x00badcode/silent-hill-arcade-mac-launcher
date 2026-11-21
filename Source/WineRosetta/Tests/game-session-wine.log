@@ -1,0 +1,12 @@
+00fc:err:winediag:wined3d_dll_init Using the OpenGL renderer.
+objc[48537]: Class MVKBlockObserver is implemented in both <test-workspace>/work/crash-fix/candidate/Silent Hill The Arcade.app/Contents/Resources/Wine Staging.app/Contents/Resources/wine/lib/libMoltenVK.dylib (0x2154bf5f0) and <test-workspace>/work/crash-fix/candidate/Silent Hill The Arcade.app/Contents/Resources/Wine Staging.app/Contents/Resources/wine/lib/GStreamer.framework/Versions/1.0/lib/libMoltenVK.dylib (0x22ccdd618). This may cause spurious casting failures and mysterious crashes. One of the duplicates must be removed or renamed.
+0234:err:quartz:color_sink_Receive Failed to get sample, hr 0x80040211.
+0234:err:quartz:avi_decompressor_sink_Receive Failed to send sample, hr 0x80040211.
+0234:err:quartz:send_buffer Failed to get a sample, hr 0x80040211.
+03cc:err:quartz:color_sink_Receive Failed to get sample, hr 0x80040211.
+03cc:err:quartz:avi_decompressor_sink_Receive Failed to send sample, hr 0x80040211.
+058c:err:quartz:color_sink_Receive Failed to get sample, hr 0x80040211.
+058c:err:quartz:avi_decompressor_sink_Receive Failed to send sample, hr 0x80040211.
+0764:err:quartz:color_sink_Receive Failed to get sample, hr 0x80040211.
+0764:err:quartz:avi_decompressor_sink_Receive Failed to send sample, hr 0x80040211.
+0764:err:quartz:avi_decompressor_sink_Receive Failed to send sample, hr 0x80040227.

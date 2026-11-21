@@ -1,0 +1,129 @@
+tick=796807314 initialized=000000f8
+tick=796807316 Direct3DCreate9 entered=00000020
+tick=796808079 Direct3DCreate9 returned=0169cf60
+tick=796808359 CreateDevice entered=0001005e
+tick=796808396 CreateDevice returned=00000000
+tick=796808398 Hidden cursor=00020078
+tick=796814510 frame_elapsed=0 joined=0 aiming=0 target=-1,-1
+tick=796824530 frame_elapsed=10020 joined=0 aiming=0 target=-1,-1
+tick=796834564 frame_elapsed=20054 joined=0 aiming=0 target=-1,-1
+tick=796844597 frame_elapsed=30087 joined=0 aiming=0 target=-1,-1
+tick=796854629 frame_elapsed=40119 joined=0 aiming=0 target=-1,-1
+tick=796864694 frame_elapsed=50184 joined=0 aiming=0 target=-1,-1
+tick=796869648 movie=../Movie/sceneB.vid
+tick=796909074 movie_hresult=00000000
+tick=796909075 movie_connected=00000001
+tick=796909113 frame_elapsed=94603 joined=1 aiming=0 target=-1,-1
+tick=796919140 frame_elapsed=104630 joined=1 aiming=0 target=-1,-1
+tick=796929169 frame_elapsed=114659 joined=1 aiming=0 target=-1,-1
+tick=796939170 frame_elapsed=124660 joined=1 aiming=0 target=-1,-1
+tick=796949203 frame_elapsed=134693 joined=1 aiming=0 target=-1,-1
+tick=796959209 frame_elapsed=144699 joined=1 aiming=1 target=-1,-1
+tick=796969260 frame_elapsed=154750 joined=1 aiming=1 target=-1,-1
+tick=796979281 frame_elapsed=164771 joined=1 aiming=1 target=239,185
+tick=796989305 frame_elapsed=174795 joined=1 aiming=1 target=-1,-1
+tick=796999305 frame_elapsed=184795 joined=1 aiming=1 target=-1,-1
+tick=797009306 frame_elapsed=194796 joined=1 aiming=1 target=-1,-1
+tick=797019336 frame_elapsed=204826 joined=1 aiming=0 target=-1,-1
+tick=797029343 frame_elapsed=214833 joined=1 aiming=0 target=-1,-1
+tick=797039377 frame_elapsed=224867 joined=1 aiming=1 target=290,367
+tick=797048236 movie=../Movie/sceneC.vid
+tick=797048717 movie_hresult=00000000
+tick=797048717 movie_connected=00000001
+tick=797049405 frame_elapsed=234895 joined=1 aiming=0 target=-1,-1
+tick=797059409 frame_elapsed=244899 joined=1 aiming=1 target=-1,-1
+tick=797069440 frame_elapsed=254930 joined=1 aiming=1 target=332,244
+tick=797079451 frame_elapsed=264941 joined=1 aiming=1 target=275,287
+tick=797089472 frame_elapsed=274962 joined=1 aiming=1 target=-1,-1
+tick=797099474 frame_elapsed=284964 joined=1 aiming=1 target=-1,-1
+tick=797109483 frame_elapsed=294973 joined=1 aiming=1 target=-1,-1
+tick=797119485 frame_elapsed=304975 joined=1 aiming=1 target=-1,-1
+tick=797129508 frame_elapsed=314998 joined=1 aiming=1 target=-1,-1
+tick=797139509 frame_elapsed=324999 joined=1 aiming=0 target=-1,-1
+tick=797149512 frame_elapsed=335002 joined=1 aiming=1 target=330,313
+tick=797159538 frame_elapsed=345028 joined=1 aiming=1 target=-1,-1
+tick=797169540 frame_elapsed=355030 joined=1 aiming=1 target=226,342
+tick=797179542 frame_elapsed=365032 joined=1 aiming=1 target=-1,-1
+tick=797189543 frame_elapsed=375033 joined=1 aiming=1 target=266,298
+tick=797199572 frame_elapsed=385062 joined=1 aiming=1 target=424,387
+tick=797209577 frame_elapsed=395067 joined=1 aiming=1 target=367,426
+tick=797219605 frame_elapsed=405095 joined=1 aiming=1 target=-1,-1
+tick=797229617 frame_elapsed=415107 joined=1 aiming=1 target=502,153
+tick=797239639 frame_elapsed=425129 joined=1 aiming=1 target=-1,-1
+tick=797249672 frame_elapsed=435162 joined=1 aiming=1 target=-1,-1
+tick=797254879 movie=../Movie/sceneD.vid
+tick=797255339 movie_hresult=00000000
+tick=797255339 movie_connected=00000001
+tick=797259702 frame_elapsed=445192 joined=1 aiming=0 target=-1,-1
+tick=797268419 movie=../Movie/A_PARTa.vid
+tick=797268419 movie=../Movie/A_PART.vid
+tick=797268548 movie_hresult=00000000
+tick=797268548 movie_connected=00000001
+tick=797268551 movie_hresult=00000000
+tick=797268551 movie_connected=00000001
+tick=797269702 frame_elapsed=455192 joined=1 aiming=1 target=-1,-1
+tick=797279709 frame_elapsed=465199 joined=1 aiming=1 target=-1,-1
+tick=797289709 frame_elapsed=475199 joined=1 aiming=1 target=338,198
+tick=797299735 frame_elapsed=485225 joined=1 aiming=1 target=326,348
+tick=797309740 frame_elapsed=495230 joined=1 aiming=1 target=429,287
+tick=797319750 frame_elapsed=505240 joined=1 aiming=1 target=317,285
+tick=797329778 frame_elapsed=515268 joined=1 aiming=1 target=282,231
+tick=797339781 frame_elapsed=525271 joined=1 aiming=1 target=295,243
+tick=797349782 frame_elapsed=535272 joined=1 aiming=1 target=353,275
+tick=797359783 frame_elapsed=545273 joined=1 aiming=1 target=314,210
+tick=797369807 frame_elapsed=555297 joined=1 aiming=1 target=343,316
+tick=797379813 frame_elapsed=565303 joined=1 aiming=1 target=310,194
+tick=797389844 frame_elapsed=575334 joined=1 aiming=1 target=328,250
+tick=797399871 frame_elapsed=585361 joined=1 aiming=0 target=-1,-1
+tick=797402338 fullscreen=00000001
+tick=797409872 frame_elapsed=595362 joined=1 aiming=1 target=318,256
+tick=797419874 frame_elapsed=605364 joined=1 aiming=1 target=320,189
+tick=797429877 frame_elapsed=615367 joined=1 aiming=1 target=301,113
+tick=797439903 frame_elapsed=625393 joined=1 aiming=1 target=318,166
+tick=797445867 movie=../Movie/sceneE_F.vid
+tick=797446278 movie_hresult=00000000
+tick=797446279 movie_connected=00000001
+tick=797449933 frame_elapsed=635423 joined=1 aiming=0 target=-1,-1
+tick=797459933 frame_elapsed=645423 joined=1 aiming=0 target=-1,-1
+tick=797469933 frame_elapsed=655423 joined=1 aiming=0 target=-1,-1
+tick=797479942 frame_elapsed=665432 joined=1 aiming=1 target=338,232
+tick=797489959 frame_elapsed=675449 joined=1 aiming=1 target=320,169
+tick=797499973 frame_elapsed=685463 joined=1 aiming=1 target=380,281
+tick=797510005 frame_elapsed=695495 joined=1 aiming=1 target=283,273
+tick=797520036 frame_elapsed=705526 joined=1 aiming=1 target=300,213
+tick=797530047 frame_elapsed=715537 joined=1 aiming=1 target=321,274
+tick=797540081 frame_elapsed=725571 joined=1 aiming=1 target=335,290
+tick=797550113 frame_elapsed=735603 joined=1 aiming=1 target=355,272
+tick=797560144 frame_elapsed=745634 joined=1 aiming=1 target=371,249
+tick=797570145 frame_elapsed=755635 joined=1 aiming=1 target=304,238
+tick=797578850 movie=../Movie/sceneG_success.vid
+tick=797579299 movie_hresult=00000000
+tick=797579299 movie_connected=00000001
+tick=797580171 frame_elapsed=765661 joined=1 aiming=0 target=-1,-1
+tick=797590172 frame_elapsed=775662 joined=1 aiming=0 target=-1,-1
+tick=797600204 frame_elapsed=785694 joined=1 aiming=0 target=-1,-1
+tick=797605751 movie=../Movie/C_PART.vid
+tick=797605751 movie=../Movie/C_PARTa.vid
+tick=797605778 movie_hresult=00000000
+tick=797605778 movie_connected=00000001
+tick=797605781 movie_hresult=00000000
+tick=797605781 movie_connected=00000001
+tick=797610236 frame_elapsed=795726 joined=1 aiming=1 target=342,219
+tick=797620270 frame_elapsed=805760 joined=1 aiming=1 target=297,181
+tick=797630271 frame_elapsed=815761 joined=1 aiming=1 target=287,125
+tick=797640274 frame_elapsed=825764 joined=1 aiming=1 target=318,176
+tick=797650275 frame_elapsed=835765 joined=1 aiming=1 target=153,204
+tick=797660275 frame_elapsed=845765 joined=1 aiming=1 target=314,248
+tick=797670308 frame_elapsed=855798 joined=1 aiming=1 target=331,209
+tick=797680311 frame_elapsed=865801 joined=1 aiming=1 target=496,255
+tick=797690341 frame_elapsed=875831 joined=1 aiming=1 target=342,288
+tick=797711516 frame_elapsed=897006 joined=1 aiming=1 target=320,262
+tick=797721539 frame_elapsed=907029 joined=1 aiming=0 target=-1,-1
+tick=797731542 frame_elapsed=917032 joined=1 aiming=1 target=293,214
+tick=797741573 frame_elapsed=927063 joined=1 aiming=1 target=318,249
+tick=797751574 frame_elapsed=937064 joined=1 aiming=1 target=281,206
+tick=797784173 frame_elapsed=969663 joined=1 aiming=1 target=322,257
+tick=797794177 frame_elapsed=979667 joined=1 aiming=1 target=355,195
+tick=797804206 frame_elapsed=989696 joined=1 aiming=1 target=324,232
+tick=797814210 frame_elapsed=999700 joined=1 aiming=1 target=423,301
+tick=797824239 frame_elapsed=1009729 joined=1 aiming=1 target=347,261
