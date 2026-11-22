@@ -1,60 +1,50 @@
-# Silent Hill The Arcade — Mac launcher
+# Silent Hill The Arcade for Mac
 
-An unofficial launcher for playing Silent Hill The Arcade on an Apple silicon Mac with a mouse. It bundles a Wine runtime, adapts the cabinet controls, and imports your game files on first launch.
+An unofficial launcher to play Silent Hill The Arcade on a Mac with mouse aiming, a crosshair, fullscreen, and pause controls.
 
-**The game is not included.** Supply your own complete copy of the supported **June 2022 standalone Windows build**.
+**The game is not included.** You need a complete copy of the **June 2022 standalone Windows build**.
 
-## Play
+## Requirements
 
-1. Download the **macOS arm64 DMG** from this repository’s **Releases** page, when available.
-2. Open the DMG, drag **Silent Hill The Arcade.app** into **Applications**, and open it.
-3. Choose the complete game folder, `KSHG.exe` inside that folder, or a ZIP containing the complete game. Wait for import, then press **1 on the number row** at the title screen.
+- **Apple silicon Mac** (M1 or newer), **macOS 13 or later**, and [Rosetta 2](https://support.apple.com/en-us/102527). Intel Macs are not supported.
+- **8 GB free space**, or **12 GB** when importing a ZIP.
 
-After the first import, double-click the app to play. Wine, Python, and Homebrew do not need to be installed by players.
+Wine is included. You do not need Python, Homebrew, or a Windows virtual machine.
 
-Read **[LAUNCHER.md](LAUNCHER.md)** for installation, requirements, import instructions, controls, and troubleshooting.
+## How to play
 
-## Features
+1. Download the **macOS arm64 DMG** from **Releases** when available. Choose the DMG, not the “Source code” download.
+2. Open it, drag **Silent Hill The Arcade.app** into **Applications**, then open the app.
+3. Choose your **complete game folder** or its **ZIP**, then click **Import Game**. You can also select `KSHG.exe` inside the folder.
+4. Wait for setup. At the title screen, click inside the game window and press **1 on the number row** to start. Press **1** again to skip the Player 2 wait.
 
-- Mouse aiming with an in-game crosshair and one shot per click.
-- Reload with **R** or right-click, fullscreen with **F**, and pause with **Esc**.
-- Original 4:3 picture and cinematic rendering adaptations.
-- A patched Wine runtime addressing a reproduced Rosetta mode-transition crash.
-- A separate local game profile, with compatibility edits applied to the imported copy.
+The folder must contain `KSHG.exe`, its DLLs, `Data`, and `Shader`. The executable alone is not enough. Extract RAR or 7z archives first.
 
-## Compatibility and release status
+Setup can take a few minutes. **After the first import, just double-click the app to play.** Your original files are left untouched.
 
-This **0.6.1 preview** targets Apple silicon Macs running macOS 13 or later, with Rosetta 2. Testing used an Apple M4 and macOS 26.6.2. Intel Macs are not supported by this build. A complete campaign playthrough remains unverified.
+## Controls
 
-The current test DMG is named **UNNOTARIZED**. A standard public download still needs Developer ID signing, Apple notarization, and the runtime license/source materials described in [THIRD_PARTY.md](THIRD_PARTY.md). See [RELEASING.md](RELEASING.md) before publishing a binary release.
+| Action | Control |
+| --- | --- |
+| Start | **1** on the number row |
+| Aim | Move the mouse |
+| Shoot | **Left-click** |
+| Reload | **R** or **right-click** |
+| Fullscreen / windowed | **F** |
+| Pause / resume | **Esc**; **OK** also resumes |
+| Quit | Return to windowed mode with **F**, then close the window |
 
-## Build and package
+## Important information
 
-Developers need Python 3.9 or newer, Apple’s command-line developer tools, and the supported [Gcenx Wine Staging 11.21 bundle](https://github.com/Gcenx/macOS_Wine_builds/releases/tag/11.21). No game files are needed to build the launcher.
+- **This preview is not notarized by Apple.** If macOS blocks it, use [Apple’s per-app approval instructions](https://support.apple.com/en-us/102445) if you trust the download.
+- Fullscreen preserves **4:3**. Black bars on wider screens are normal.
+- Tested on an **M4 with macOS 26.6.2**. Other Mac models and a full campaign playthrough remain unverified.
+- “Unsupported version” or “missing files” means you need the supported build and its complete folder.
 
-```sh
-python3 build-launcher.py \
-  --wine-app '/Applications/Wine Staging.app' \
-  --output 'build/Silent Hill The Arcade.app'
+For problems, use **Show Log** and include the log, Mac model, and macOS version in a GitHub issue. Local files and logs are stored in:
 
-python3 package-release.py \
-  --app 'build/Silent Hill The Arcade.app' \
-  --test
+```text
+~/Library/Application Support/Silent Hill The Arcade/
 ```
 
-The builder validates the runtime and applies the Rosetta patch. The packager signs the native components, creates a DMG in `dist`, verifies it, and writes a SHA-256 checksum. The `--test` download is explicitly unnotarized. [RELEASING.md](RELEASING.md) explains the Developer ID and notarization workflow.
-
-Generated app bundles, disk images, downloaded runtimes, and local game files are excluded from Git. Attach the finished DMG and checksum as GitHub Release assets.
-
-## Project files
-
-| File | Purpose |
-| --- | --- |
-| [LAUNCHER.md](LAUNCHER.md) | Player guide |
-| [RELEASING.md](RELEASING.md) | Build, signing, notarization, and GitHub publishing |
-| [RELEASE_NOTES.md](RELEASE_NOTES.md) | Preview release-note draft |
-| [Source/README.md](Source/README.md) | Launcher, adapter, and validation evidence |
-| [Source/WineRosetta/README.md](Source/WineRosetta/README.md) | Crash diagnosis and reproducible runtime patch |
-| [THIRD_PARTY.md](THIRD_PARTY.md) | Runtime licenses and source references |
-
-Original launcher, adapter, and packaging code use the [MIT license](LICENSE). Third-party components retain their own licenses. Silent Hill The Arcade belongs to its respective rights holders; this project is not affiliated with Konami.
+[MIT license](LICENSE) · [Runtime credits and licenses](NOTICE) · Not affiliated with Konami.

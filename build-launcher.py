@@ -39,7 +39,7 @@ for name in ('sha_v01.cfg','Arcade.icns'):
     shutil.copy2(source/'BundleResources'/name,resources/name)
 (resources/'Support').mkdir()
 shutil.copy2(source/'BundleResources/macd.dll',resources/'Support/macd.dll')
-for name in ('LAUNCHER.md','THIRD_PARTY.md','LICENSE'):
+for name in ('README.md','NOTICE','LICENSE'):
     shutil.copy2(project/name,resources/name)
 subprocess.run(['/usr/bin/xcrun','clang','-fobjc-arc','-O2','-Wall','-Wextra','-Werror',
     '-Wno-deprecated-declarations','-target','arm64-apple-macos13.0','-framework','Cocoa',

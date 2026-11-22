@@ -98,7 +98,7 @@ with tempfile.TemporaryDirectory(prefix='arcade-release-') as scratch:
     stage.mkdir()
     run('/usr/bin/ditto',app,stage/app.name)
     (stage/'Applications').symlink_to('/Applications')
-    for doc in ('LAUNCHER.md','THIRD_PARTY.md','LICENSE'):
+    for doc in ('README.md','NOTICE','LICENSE'):
         run('/usr/bin/ditto',project/doc,stage/doc)
     run('/usr/bin/hdiutil','create','-volname','Silent Hill Arcade Launcher','-fs','HFS+',
         '-format','UDZO','-srcfolder',stage,dmg)
