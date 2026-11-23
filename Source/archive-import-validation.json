@@ -1,0 +1,15 @@
+{
+  "version": "0.6.2",
+  "direct_rar_import": true,
+  "containing_folder_import": true,
+  "patched_hashes_match": true,
+  "containing_folder_seconds": 57.5,
+  "invalid_rar_preserves_existing_game": true,
+  "multiple_archives_preserves_existing_game": true,
+  "empty_folder_preserves_existing_game": true,
+  "extracted_folder_regression": true,
+  "macos_builtin_rar_extractor": true,
+  "rar_file_type_matches_actual_file": true,
+  "normal_profile_containing_folder_import": true,
+  "picker_ui_inspection": "Desktop tool returned cgWindowNotFound; native RAR content-type matching and importer tests passed."
+}

@@ -26,4 +26,6 @@ Shader/
 KSHG.exe
 shaiolib*.dll
 *.zip
+*.rar
+*.7z
 Source/WineRosetta/Tests/*.exe

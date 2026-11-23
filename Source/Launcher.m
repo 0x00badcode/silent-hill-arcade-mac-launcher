@@ -113,6 +113,34 @@ static NSURL *findRoot(NSURL *selection) {
     return nil;
 }
 
+static BOOL isGameArchive(NSURL *file) {
+    NSString *extension = file.pathExtension.lowercaseString;
+    return [extension isEqualToString:@"zip"] || [extension isEqualToString:@"rar"];
+}
+
+static NSURL *archiveInFolder(NSURL *folder, NSError **error) {
+    NSNumber *directory = nil;
+    if (![folder getResourceValue:&directory forKey:NSURLIsDirectoryKey error:error] || !directory.boolValue)
+        return nil;
+    NSArray<NSURL *> *items = [NSFileManager.defaultManager contentsOfDirectoryAtURL:folder
+        includingPropertiesForKeys:@[NSURLIsRegularFileKey]
+        options:NSDirectoryEnumerationSkipsHiddenFiles error:error];
+    if (!items) return nil;
+    NSURL *archive = nil;
+    for (NSURL *item in items) {
+        if (!isGameArchive(item)) continue;
+        NSNumber *regular = nil;
+        if (![item getResourceValue:&regular forKey:NSURLIsRegularFileKey error:error]) return nil;
+        if (!regular.boolValue) continue;
+        if (archive) {
+            if (error) *error = failure(@"This folder contains more than one ZIP or RAR. Select the game archive itself.");
+            return nil;
+        }
+        archive = item;
+    }
+    return archive;
+}
+
 static BOOL rejectLinks(NSURL *root, NSError **error) {
     NSNumber *linked;
     if (![root getResourceValue:&linked forKey:NSURLIsSymbolicLinkKey error:error]) return NO;
@@ -148,23 +176,35 @@ static BOOL importGame(NSURL *selection, NSURL *state, NSURL *resources, NSError
     NSURL *root = selection;
     NSURL *staging = [temporary URLByAppendingPathComponent:@"Game"];
     @try {
-        if ([selection.pathExtension caseInsensitiveCompare:@"zip"]==NSOrderedSame) {
+        NSURL *archive = isGameArchive(selection) ? selection : nil;
+        if (!archive) {
+            root = findRoot(selection);
+            if (!root) {
+                archive = archiveInFolder(selection,error);
+                if (!archive && error && *error) return NO;
+            }
+        }
+        if (archive) {
             root = [temporary URLByAppendingPathComponent:@"Extracted"];
+            if (![fm createDirectoryAtURL:root withIntermediateDirectories:YES attributes:nil error:error]) return NO;
             NSTask *extract = [NSTask new];
-            extract.executableURL = [NSURL fileURLWithPath:@"/usr/bin/ditto"];
-            extract.arguments = @[@"-x",@"-k",selection.path,root.path];
+            BOOL rar = [archive.pathExtension.lowercaseString isEqualToString:@"rar"];
+            extract.executableURL = [NSURL fileURLWithPath:rar ? @"/usr/bin/bsdtar" : @"/usr/bin/ditto"];
+            extract.arguments = rar ? @[@"-xf",archive.path,@"-C",root.path]
+                                    : @[@"-x",@"-k",archive.path,root.path];
+            extract.standardInput = NSFileHandle.fileHandleWithNullDevice;
             extract.standardOutput = NSFileHandle.fileHandleWithNullDevice;
             extract.standardError = NSFileHandle.fileHandleWithNullDevice;
             if (![extract launchAndReturnError:error]) return NO;
             [extract waitUntilExit];
             if (extract.terminationStatus) {
-                if (error) *error = failure(@"The ZIP archive could not be extracted. Extract it first, then choose its game folder.");
+                if (error) *error = failure(@"The archive could not be extracted. Check that it is complete and not password-protected, or extract it first and choose its game folder.");
                 return NO;
             }
         }
-        root = findRoot(root);
+        root = root ? findRoot(root) : nil;
         if (!root) {
-            if (error) *error = failure(@"No KSHG.exe was found. Choose the game folder, its KSHG.exe, or a ZIP containing the complete game.");
+            if (error) *error = failure(@"No KSHG.exe was found. Choose the complete game folder, its KSHG.exe, a ZIP or RAR, or a folder containing one game archive.");
             return NO;
         }
         if (!checkLayout(root,manifest,error) || !rejectLinks(root,error)) return NO;
@@ -279,12 +319,14 @@ int main(int argc, const char **argv) {
             activate();
             NSOpenPanel *panel = [NSOpenPanel openPanel];
             panel.title = @"Choose your Silent Hill game files";
-            panel.message = @"Choose the complete Windows game folder, KSHG.exe inside that folder, or a ZIP archive. The launcher will copy the files once and prepare them for Mac.";
+            panel.message = @"Choose your game folder, KSHG.exe, or a ZIP or RAR archive. You can also choose a folder containing one game archive.";
             panel.prompt = @"Import Game";
             panel.canChooseDirectories = YES;
             panel.canChooseFiles = YES;
             panel.allowsMultipleSelection = NO;
-            panel.allowedContentTypes = @[UTTypeZIP, [UTType typeWithFilenameExtension:@"exe"]];
+            panel.allowedContentTypes = @[UTTypeFolder, UTTypeZIP,
+                [UTType typeWithFilenameExtension:@"rar"],
+                [UTType typeWithFilenameExtension:@"exe"]];
             if ([panel runModal]!=NSModalResponseOK) { close(lock); return 0; }
             NSWindow *progress = progressWindow(@"Importing your game files. This may take a few minutes.");
             __block BOOL done=NO, imported=NO;

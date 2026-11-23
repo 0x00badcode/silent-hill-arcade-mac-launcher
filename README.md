@@ -7,7 +7,7 @@ An unofficial launcher to play Silent Hill The Arcade on a Mac with mouse aiming
 ## Requirements
 
 - **Apple silicon Mac** (M1 or newer), **macOS 13 or later**, and [Rosetta 2](https://support.apple.com/en-us/102527). Intel Macs are not supported.
-- **8 GB free space**, or **12 GB** when importing a ZIP.
+- **8 GB free space**, or **12 GB** when importing a ZIP or RAR.
 
 Wine is included. You do not need Python, Homebrew, or a Windows virtual machine.
 
@@ -15,10 +15,10 @@ Wine is included. You do not need Python, Homebrew, or a Windows virtual machine
 
 1. Download the **macOS arm64 DMG** from **Releases** when available. Choose the DMG, not the “Source code” download.
 2. Open it, drag **Silent Hill The Arcade.app** into **Applications**, then open the app.
-3. Choose your **complete game folder** or its **ZIP**, then click **Import Game**. You can also select `KSHG.exe` inside the folder.
+3. Choose your **complete game folder**, **ZIP**, or **RAR**, then click **Import Game**. You can also choose a folder containing one game archive, or select `KSHG.exe` inside an extracted game folder.
 4. Wait for setup. At the title screen, click inside the game window and press **1 on the number row** to start. Press **1** again to skip the Player 2 wait.
 
-The folder must contain `KSHG.exe`, its DLLs, `Data`, and `Shader`. The executable alone is not enough. Extract RAR or 7z archives first.
+The extracted folder must contain `KSHG.exe`, its DLLs, `Data`, and `Shader`. The executable alone is not enough. ZIP and RAR files are unpacked automatically; extract 7z archives first.
 
 Setup can take a few minutes. **After the first import, just double-click the app to play.** Your original files are left untouched.
 
